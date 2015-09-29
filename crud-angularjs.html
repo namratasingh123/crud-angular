@@ -1,0 +1,52 @@
+<html ng-app="myApp" ng-controller="empcontroller">
+<head>
+<title>angular routing</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+<script src="abc.js"></script>
+</head>
+<body>
+<table>
+<tbody>
+<tr>
+<td>Enter Id:
+</td>
+<td><input type="text" ng-model="id"></td>
+</tr>
+<tr>
+<td>Enter name:
+</td>
+<td><input type="text" ng-model="name"></td>
+</tr>
+<tr>
+<td>Enter designation</td>
+<td><input type="text" ng-model="desg">
+</td>
+</tr>
+<tr>
+<td><input type="button" ng-click="btnclk()" value="save"></td>
+<td><input type="button" ng-click="btnupdate()" value="Update"</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<td>ID</td>
+<td>Name</td>
+<td>Designation</td>
+</tr>
+</thead>
+<tbody ng-repeat="emp in emparr">
+            <tr>
+                <td ng-bind="emp.arr_id"></td>
+                <td ng-bind="emp.arr_name"></td>
+                <td ng-bind="emp.arr_desg"></td>
+                <td><input type="button" 
+                ng-click="edit(emp,emparr.indexOf(emp))" value="Edit"/></td>
+                <td><input type="button" 
+                ng-click="del(emparr.indexOf(emp))" value="Delete"/></td>
+            </tr>
+        </tbody>
+</table>
+</body>
+</html>
